@@ -1,0 +1,48 @@
+<script>
+	function numberSeries() {
+		number = 4;
+		line = '';
+		for (i = 1; i <= number; i++) {
+
+			for (j = 1; j <= i; j++) {
+				if (i === 4 && j === 4) {
+					line += ' ' + '0';
+				} else {
+					let nSquare = (j * j);
+					line += ' ' + nSquare;
+				}
+			}
+			for (j = i; j > 1; j--) {
+				let nOneSquare = (j - 1) * (j - 1);
+				line += ' ' + nOneSquare;
+			}
+
+			line += '<br>';
+		}
+		for (i = number - 1; i >= 1; i--) {
+
+			for (j = 1; j <= i; j++) {
+				let nSquare = (j * j);
+				line += ' ' + nSquare;
+			}
+			for (j = i; j > 1; j--) {
+				let nOneSquare = (j - 1) * (j - 1);
+				line += ' ' + nOneSquare;
+
+			}
+
+			line += '<br>';
+		}
+		document.getElementById('result').innerHTML = line;
+
+	}
+</script>
+<style>
+	#result {
+		text-align: center;
+	}
+</style>
+<body onload="return numberSeries();">
+<div id="result">
+</div>
+</body>
